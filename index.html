@@ -4,27 +4,26 @@
     <title>Dog Creator</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Link to custom style.css -->
+    <!-- Link to custom CSS -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container mt-5">
-      <div class="row mb-4">
-        <div class="col">
-          <h1 class="float-left font-weight-bold display-3">Dog Creator</h1>
+      <h1 class="display-4 font-weight-bold mb-4">Dog Creator</h1>
+      <div class="form-group row align-items-center">
+        <label class="col-sm-2 col-form-label font-weight-bold">Name:</label>
+        <div class="col-sm-3">
+          <span id="dog-name"></span>
         </div>
-        <div class="col-auto">
-          <button id="create-dog" class="btn btn-lg btn-warning mb-3">Create Dog</button>
-        </div>
-      </div>
-      <div class="form-group mb-5">
-        <label for="gender-select" class="font-weight-bold">Gender:</label>
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-secondary gender-btn" value="male">Male</button>
-          <button type="button" class="btn btn-secondary gender-btn" value="female">Female</button>
+        <div class="col-sm-7">
+          <div class="btn-group">
+            <button id="male-btn" type="button" class="btn btn-lg gender-btn active">Male</button>
+            <button id="female-btn" type="button" class="btn btn-lg gender-btn">Female</button>
+          </div>
         </div>
       </div>
-      <p><strong class="font-weight-bold display-4">Name:</strong> <span id="dog-name" class="font-weight-bold display-4"></span></p>
+      <button id="create-dog" class="btn btn-lg btn-warning mb-3">Create Dog</button>
+      <button id="save-dog" class="btn btn-lg btn-transparent mb-3">Save Dog</button>
       <img id="dog-image" src="" alt="Random Dog Image" class="img-fluid">
     </div>
     <!-- Link to Bootstrap JS (optional) -->
