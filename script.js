@@ -1,4 +1,5 @@
 const createDogButton = document.getElementById('create-dog');
+const saveDogButton = document.getElementById('save-dog');
 const dogImage = document.getElementById('dog-image');
 const dogName = document.getElementById('dog-name');
 const genderButtons = document.querySelectorAll('.gender-btn');
@@ -19,6 +20,14 @@ function updateDogName(gender) {
   dogName.textContent = name;
 }
 
+// Download the dog image
+function saveDogImage() {
+  const link = document.createElement('a');
+  link.href = dogImage.src;
+  link.download = 'dog-image.jpg';
+  link.click();
+}
+
 createDogButton.addEventListener('click', () => {
   fetch('https://dog.ceo/api/breeds/image/random')
     .then(response => response.json())
@@ -34,11 +43,14 @@ createDogButton.addEventListener('click', () => {
 genderButtons.forEach(button => {
   button.addEventListener('click', () => {
     genderButtons.forEach(btn => btn.classList.remove('active')); // Remove the active class from all gender buttons
-    button.classList
-    .add('active'); // Add the active class to the clicked gender button
+    button.classList.add('active'); // Add the active class to the clicked gender button
     const gender = button.value;
     updateDogName(gender); // Update the dog name when the gender is changed
   });
 });
 
 updateDogName(document.querySelector('.gender-btn.active').value); // Update the dog name when the page is loaded
+
+saveDogButton.addEventListener('click', () => {
+  saveDogImage(); // Download the dog image when the "Save Dog" button is clicked
+});
