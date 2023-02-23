@@ -4,12 +4,20 @@
     <title>Dog Creator</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Link to custom style.css -->
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container mt-5">
-      <h1>Dog Creator</h1>
+      <div class="row">
+        <div class="col">
+          <h1 class="float-left">Dog Creator</h1>
+        </div>
+        <div class="col-auto">
+          <button id="create-dog" class="btn btn-lg btn-warning mb-3">Create Dog</button>
+        </div>
+      </div>
       <p><strong>Name:</strong> <span id="dog-name"></span></p>
-      <button id="create-dog" class="btn btn-lg btn-warning mb-3">Create Dog</button>
       <img id="dog-image" src="" alt="Random Dog Image" class="img-fluid">
     </div>
     <!-- Link to Bootstrap JS (optional) -->
