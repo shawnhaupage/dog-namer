@@ -4,7 +4,7 @@ body {
   
   .container {
     background-color: #fff;
-    padding
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   }
@@ -13,7 +13,30 @@ body {
     max-width: 100%;
     margin-top: 1rem;
   }
-  .display-4 {
-    font-size: 2.5rem;
+  
+  .display-4,
+  .form-group label {
+    font-size: 2rem;
   }
-    
+  
+  .form-group label,
+  .font-weight-bold {
+    font-weight: bold;
+  }
+  
+  .bubble-select {
+    width: 200px;
+    height: 3rem;
+    border-radius: 50px;
+    background-color: #f9f9f9;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bubble-select:focus {
+    outline: none;
+    box-shadow: 0 0 6px rgba(81, 203, 238, 0.5);
+  }
+  

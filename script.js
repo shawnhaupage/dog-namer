@@ -4,8 +4,8 @@ const dogName = document.getElementById('dog-name');
 const genderSelect = document.getElementById('gender-select');
 
 // Define arrays of pre-selected dog names
-const maleDogNames = ['Buddy', 'Max', 'Charlie', 'Rocky', 'Cooper'];
-const femaleDogNames = ['Daisy', 'Luna', 'Sadie', 'Bella', 'Molly'];
+const maleDogNames = ['Max','Charlie','Cooper','Milo','Buddy','Rocky','Bear','Teddy','Duke','Leo','Beau','Tucker','Oliver','Jack','Bentley','Ollie','Winston','Zeus','Toby','Loki','Jax','Finn','Blu','Bruno','Murphy'];
+const femaleDogNames = ['Luna','Bella','Daisy','Lucy','Lily','Zoe','Lola','Sadie','Bailey','Stella','Coco','Molly','Maggie','Penny','Nala','Rosie','Roxy','Ruby','Chloe','Sophie','Ellie','Willow','Piper','Millie','Gracie','Mia','Pepper','Nova','Callie','Winnie','Lulu','Hazel'];
 
 // Get a random name from an array of dog names
 function getRandomName(gender) {
