@@ -1,9 +1,9 @@
 body {
-    background-color: #f9f9f9;
+    background-color: #F0E8E8;
   }
   
   .container {
-    background-color: #fff;
+    background-color: #FBFBF8;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -27,35 +27,37 @@ body {
   .gender-btn {
     border-radius: 30px;
     font-size: 1.5rem;
+    background-color: #F9D9D8;
+    color: #695959;
+    margin-right: 1rem;
+    box-shadow: none;
   }
   
   .gender-btn.active {
-    background-color: #5bcbea;
-    color: #fff;
+    background-color: #BDDCE6;
+    color: #274C5E;
   }
   
   .font-weight-bold.display-4 {
     font-size: 2.5rem;
     margin-right: 1rem;
+    color: #695959;
   }
   
   .btn-group {
     margin-bottom: 1rem;
   }
   
-  .btn-group button {
-    box-shadow: none;
-  }
-  
   .bubble-select {
     width: 200px;
     height: 3rem;
     border-radius: 50px;
-    background-color: #f9f9f9;
+    background-color: #F9D9D8;
     border: none;
     font-size: 1.2rem;
     padding: 1rem 2rem;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #695959;
   }
   
   .bubble-select:focus {
@@ -76,6 +78,6 @@ body {
     pointer-events: none;
     border-style: solid;
     border-width: 8px 5px 0 5px;
-    border-color: #5bcbea transparent transparent transparent;
+    border-color: #F9D9D8 transparent transparent transparent;
   }
   
