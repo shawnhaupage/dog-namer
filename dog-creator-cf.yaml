@@ -1,0 +1,87 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Deploy Dog Creator app on an EC2 instance
+
+Parameters:
+  KeyName:
+    Type: String
+    Description: Name of an existing EC2 key pair for SSH access
+    Default: my-keypair
+  RepoUrl:
+    Type: String
+    Description: The URL of the repository to clone
+    Default: https://github.com/shawnhaupage/dog-namer.git
+
+Resources:
+  DogCreatorEC2Role:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: "Dog-Create-EC2-Role"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service: "ec2.amazonaws.com"
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: "S3Access"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "s3:PutObject"
+                  - "s3:ListBucket"
+                Resource: !Join [ "", [ "arn:aws:s3:::", !Ref SavedImagesBucket, "/*" ] ]
+                
+  SavedImagesBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: 'dog-creator-saved-images'
+  
+  WebAppSG:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: 'Web-App SG'
+      GroupDescription: 'Security group for the Dog Creator app'
+      VpcId: !ImportValue 'MyVPC-VPCID'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  DogCreatorInstance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      KeyName: !Ref KeyName
+      ImageId: ami-0c94855ba95c71c99 # Amazon Linux 2 LTS
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd git
+          service httpd start
+          chkconfig httpd on
+          git clone !Ref RepoUrl /var/www/html/
+      IamInstanceProfile: !Ref DogCreatorEC2Role
+      SecurityGroupIds:
+        - !Ref WebAppSG
+      Tags:
+        - Key: Name
+          Value: Dog Creator
+
+Outputs:
+  InstanceId:
+    Value: !Ref DogCreatorInstance
+    Description: The ID of the Dog Creator EC2 instance
+  PublicIpAddress:
+    Value: !GetAtt DogCreatorInstance.PublicIp
+    Description: The public IP address of the Dog Creator EC2 instance
+  SavedImagesBucketName:
+    Value: !Ref SavedImagesBucket
+    Description: The name of the S3 bucket for saving images
+  DogCreatorEC2RoleArn:
+    Value: !GetAtt DogCreatorEC2Role.Arn
+    Description: The ARN of the IAM role for the Dog Creator EC2 instance
