@@ -24,6 +24,29 @@ body {
     font-weight: bold;
   }
   
+  .gender-btn {
+    border-radius: 30px;
+    font-size: 1.5rem;
+  }
+  
+  .gender-btn.active {
+    background-color: #5bcbea;
+    color: #fff;
+  }
+  
+  .font-weight-bold.display-4 {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+  
+  .btn-group {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-group button {
+    box-shadow: none;
+  }
+  
   .bubble-select {
     width: 200px;
     height: 3rem;
@@ -53,17 +76,6 @@ body {
     pointer-events: none;
     border-style: solid;
     border-width: 8px 5px 0 5px;
-   
-    .bubble-select-arrow {
-        position: absolute;
-        top: 25%;
-        right: 10px;
-        width: 0;
-        height: 0;
-        pointer-events: none;
-        border-style: solid;
-        border-width: 8px 5px 0 5px;
-        border-color: #5bcbea transparent transparent transparent;
-      }
-    }
-    
+    border-color: #5bcbea transparent transparent transparent;
+  }
+  

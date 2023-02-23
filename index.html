@@ -17,12 +17,12 @@
           <button id="create-dog" class="btn btn-lg btn-warning mb-3">Create Dog</button>
         </div>
       </div>
-      <div class="form-group">
-        <label for="gender-select" class="font-weight-bold mb-0">Gender:</label>
-        <select class="form-control bubble-select" id="gender-select">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
+      <div class="form-group mb-5">
+        <label for="gender-select" class="font-weight-bold">Gender:</label>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-secondary gender-btn" value="male">Male</button>
+          <button type="button" class="btn btn-secondary gender-btn" value="female">Female</button>
+        </div>
       </div>
       <p><strong class="font-weight-bold display-4">Name:</strong> <span id="dog-name" class="font-weight-bold display-4"></span></p>
       <img id="dog-image" src="" alt="Random Dog Image" class="img-fluid">
