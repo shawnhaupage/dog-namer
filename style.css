@@ -40,3 +40,30 @@ body {
     box-shadow: 0 0 6px rgba(81, 203, 238, 0.5);
   }
   
+  .bubble-select option {
+    color: #000;
+  }
+  
+  .bubble-select-arrow {
+    position: absolute;
+    top: 25%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+   
+    .bubble-select-arrow {
+        position: absolute;
+        top: 25%;
+        right: 10px;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        border-style: solid;
+        border-width: 8px 5px 0 5px;
+        border-color: #5bcbea transparent transparent transparent;
+      }
+    }
+    

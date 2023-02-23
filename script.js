@@ -5,7 +5,7 @@ const genderSelect = document.getElementById('gender-select');
 
 // Define arrays of pre-selected dog names
 const maleDogNames = ['Max','Charlie','Cooper','Milo','Buddy','Rocky','Bear','Teddy','Duke','Leo','Beau','Tucker','Oliver','Jack','Bentley','Ollie','Winston','Zeus','Toby','Loki','Jax','Finn','Blu','Bruno','Murphy'];
-const femaleDogNames = ['Luna','Bella','Daisy','Lucy','Lily','Zoe','Lola','Sadie','Bailey','Stella','Coco','Molly','Maggie','Penny','Nala','Rosie','Roxy','Ruby','Chloe','Sophie','Ellie','Willow','Piper','Millie','Gracie','Mia','Pepper','Nova','Callie','Winnie','Lulu','Hazel'];
+const femaleDogNames = ['Luna','Bella','Daisy','Lucy','Lily','Zoe','Lola','Sadie','Bailey','Stella','Coco','Molly','Maggie','Penny','Nala','Rosie','Roxy','Ruby','Chloe','Sophie','Ellie','Willow','Piper','Millie','Gracie','Mia','Pepper','Nova','Callie','Winnie','Lulu','Hazel','Harley','Ginger','Olive','Abby','Charlie','Honey','Lexi','Athena','Riley','Izzy','Remi','Maya','Layla','Lady','Kona','Sasha','Poppy'];
 
 // Get a random name from an array of dog names
 function getRandomName(gender) {
