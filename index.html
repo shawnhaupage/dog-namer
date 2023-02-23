@@ -11,13 +11,20 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col">
-          <h1 class="float-left">Dog Creator</h1>
+          <h1 class="float-left font-weight-bold">Dog Creator</h1>
         </div>
         <div class="col-auto">
           <button id="create-dog" class="btn btn-lg btn-warning mb-3">Create Dog</button>
         </div>
       </div>
-      <p><strong>Name:</strong> <span id="dog-name"></span></p>
+      <div class="form-group">
+        <label for="gender-select">Gender:</label>
+        <select class="form-control" id="gender-select">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <p><strong class="display-4">Name:</strong> <span id="dog-name" class="display-4"></span></p>
       <img id="dog-image" src="" alt="Random Dog Image" class="img-fluid">
     </div>
     <!-- Link to Bootstrap JS (optional) -->

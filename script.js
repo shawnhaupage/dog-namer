@@ -1,18 +1,21 @@
 const createDogButton = document.getElementById('create-dog');
 const dogImage = document.getElementById('dog-image');
 const dogName = document.getElementById('dog-name');
+const genderSelect = document.getElementById('gender-select');
 
-// Define an array of pre-selected dog names
-const dogNames = ['Buddy', 'Max', 'Charlie', 'Rocky', 'Cooper', 'Daisy', 'Luna', 'Sadie', 'Bella', 'Molly'];
+// Define arrays of pre-selected dog names
+const maleDogNames = ['Buddy', 'Max', 'Charlie', 'Rocky', 'Cooper'];
+const femaleDogNames = ['Daisy', 'Luna', 'Sadie', 'Bella', 'Molly'];
 
-// Get a random name from the array of dog names
-function getRandomName() {
-  return dogNames[Math.floor(Math.random() * dogNames.length)];
+// Get a random name from an array of dog names
+function getRandomName(gender) {
+  const names = gender === 'male' ? maleDogNames : femaleDogNames;
+  return names[Math.floor(Math.random() * names.length)];
 }
 
 // Update the dog name on the page
-function updateDogName() {
-  const name = getRandomName();
+function updateDogName(gender) {
+  const name = getRandomName(gender);
   dogName.textContent = name;
 }
 
@@ -22,9 +25,13 @@ createDogButton.addEventListener('click', () => {
     .then(data => {
       dogImage.src = data.message;
       dogImage.alt = 'Random Dog Image';
-      updateDogName(); // Update the dog name when a new dog image is created
+      updateDogName(genderSelect.value); // Update the dog name when a new dog image is created
     })
     .catch(error => console.error(error));
 });
 
-updateDogName(); // Update the dog name when the page is loaded
+genderSelect.addEventListener('change', () => {
+  updateDogName(genderSelect.value); // Update the dog name when the gender is changed
+});
+
+updateDogName(genderSelect.value); // Update the dog name when the page is loaded
