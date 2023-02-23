@@ -22,11 +22,14 @@ function updateDogName(gender) {
 
 // Download the dog image
 function saveDogImage() {
-  const link = document.createElement('a');
-  link.href = dogImage.src;
-  link.download = 'dog-image.jpg';
-  link.click();
-}
+    const link = document.createElement('a');
+    link.href = dogImage.src;
+    link.download = 'dog-image.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+  
 
 createDogButton.addEventListener('click', () => {
   fetch('https://dog.ceo/api/breeds/image/random')
